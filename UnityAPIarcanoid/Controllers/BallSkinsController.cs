@@ -18,7 +18,7 @@ namespace UnityAPIarcanoid.Controllers
         {
             return await _ballSkinService.GetAllSkins();
         }
-        [HttpPost("BuySkin/{UserId}")]
+        [HttpPost("BuySkin/{UserId}/{SkinId}")]
         public async Task<IActionResult> BuySkin(int UserId, int SkinId)
         {
             return await _ballSkinService.BuySkin(UserId, SkinId);
