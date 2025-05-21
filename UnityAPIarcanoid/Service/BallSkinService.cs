@@ -18,6 +18,13 @@ namespace UnityAPIarcanoid.Service
         {
             var user = await _context.User.Where(x => x.Id == userId).FirstOrDefaultAsync();
             var ballSkin = await _context.BallSkin.Where(x => x.Id == SkinId).FirstOrDefaultAsync();
+            if (ballSkin == null)
+            {
+                return new BadRequestObjectResult(new
+                {
+                    Error = "Неверный идентификатор скина"
+                });
+            }
             if (user.Coins < ballSkin.Price)
             {
                 return new BadRequestObjectResult(new
