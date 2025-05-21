@@ -14,8 +14,8 @@ namespace UnityAPIarcanoid.Controllers
             _coinsService = coinsService;
         }
 
-        [HttpPost("earn/{userId}")]
-        public async Task<IActionResult> EarnCoins(int userId, [FromBody] int amount)
+        [HttpPost("earn/{userId}/{amount}")]
+        public async Task<IActionResult> EarnCoins(int userId, int amount)
         {
             return await _coinsService.EarnCoins(userId, amount);
         }
