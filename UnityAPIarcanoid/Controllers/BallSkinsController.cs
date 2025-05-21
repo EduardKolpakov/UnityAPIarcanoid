@@ -33,7 +33,7 @@ namespace UnityAPIarcanoid.Controllers
         {
             return await _ballSkinService.GetCurrentSkin(userId);
         }
-        [HttpPost("SetCurrentSkin/{userId}")]
+        [HttpPost("SetCurrentSkin/{userId}/{SkinId}")]
         public async Task<IActionResult> SetCurrentSkin(int userId, int SkinId)
         { 
             return await _ballSkinService.SetCurrentSkin(userId, SkinId);
